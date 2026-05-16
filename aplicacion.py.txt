@@ -1,0 +1,20 @@
+import streamlit as st
+
+st.set_page_config(page_title="Ayuda Uni", layout="wide")
+st.title("🎓 Ayuda Administrativa - [Tu Universidad]")
+
+tab1, tab2 = st.tabs(["Calculadoras", "Trámites"])
+
+with tab1:
+    st.header("Calculadora de Promedio")
+    nota1 = st.number_input("Nota 1", min_value=0.0, max_value=20.0)
+    peso1 = st.number_input("Peso 1 %", min_value=0, max_value=100)
+    if st.button("Calcular"):
+        st.success(f"Tu promedio es: {nota1 * peso1 / 100:.2f}")
+
+with tab2:
+    st.header("Trámites")
+    with st.expander("Solicitar Constancia de Estudios"):
+        st.write("1. Entra al portal del alumno")
+        st.write("2. Ve a Servicios > Documentos")
+        st.write("3. Paga S/ 15 en caja")
